@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>Privacy Policy · Weight Lab</title>
+  <style>
+    /* The native container supplies these only when it extends into a safe area. */
+    :root {
+      --privacy-safe-top: 0px;
+      --privacy-safe-bottom: 0px;
+      --privacy-safe-left: 0px;
+      --privacy-safe-right: 0px;
+      --paper: #FAF9F5;
+      --surface: #FFFFFF;
+      --ink: #153F36;
+      --body: #394C44;
+      --muted: #67766D;
+      --line: #DEE6DD;
+      --soft: #EDF1E9;
+      --sand: #EFE9DB;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--body);
+      background: var(--paper);
+      font-synthesis: none;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; min-height: 0; margin: 0; overflow: hidden; }
+    body { background: var(--paper); }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    ::selection { background: #D9E7DB; color: var(--ink); }
+
+    /* Only the policy scrolls. The footer is a sibling, so it never leaves view. */
+    .policy-shell { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 0; }
+    .policy-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      /* Apply side insets outside the centered text column, exactly once. */
+      padding-left: var(--privacy-safe-left);
+      padding-right: var(--privacy-safe-right);
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #BDCCC0 transparent;
+      scroll-behavior: smooth;
+    }
+    .policy-scroll::-webkit-scrollbar { width: 4px; }
+    .policy-scroll::-webkit-scrollbar-thumb { border-radius: 4px; background: #BDCCC0; }
+    .scroll-inner { width: 100%; max-width: 740px; margin: 0 auto; padding: 0 24px 28px; }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: calc(24px + var(--privacy-safe-top));
+    }
+    .brand { display: flex; align-items: center; min-width: 0; gap: 9px; color: var(--ink); }
+    .brand-mark { display: block; flex: 0 0 auto; width: 28px; height: 30px; }
+    .brand-name { font-size: 10px; font-weight: 700; line-height: 1.5; letter-spacing: 1.4px; }
+    .sample-tag {
+      flex: 0 0 auto;
+      border: 1px solid #E2DDCE;
+      border-radius: 20px;
+      padding: 5px 8px;
+      background: var(--sand);
+      color: #635D4C;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .hero { padding: 27px 0 22px; }
+    .eyebrow { margin: 0 0 10px; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; }
+    h1 {
+      max-width: 540px;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(29px, 7.7vw, 43px);
+      font-weight: 650;
+      line-height: 1.13;
+      letter-spacing: -1.25px;
+    }
+    .lead { max-width: 510px; margin: 15px 0 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+    .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 19px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .meta span { display: inline-flex; align-items: center; gap: 5px; }
+    .meta svg { width: 12px; height: 12px; flex: 0 0 auto; }
+    .notice {
+      margin: 0 0 24px;
+      border-left: 2px solid #9FAE98;
+      padding: 2px 0 2px 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .notice strong { color: #405447; font-weight: 600; }
+    .at-a-glance { margin-bottom: 29px; border: 1px solid var(--line); border-radius: 17px; background: var(--soft); padding: 18px 17px; }
+    .at-a-glance h2 { margin: 0 0 13px; color: var(--ink); font-size: 13px; font-weight: 650; line-height: 1.4; }
+    .summary-item { display: flex; gap: 9px; align-items: flex-start; margin-top: 10px; font-size: 12px; line-height: 1.6; }
+    .summary-item svg { display: block; width: 16px; height: 16px; flex: 0 0 auto; margin-top: 1px; color: #466F56; }
+    .summary-item p { margin: 0; }
+
+    .policy-section { padding: 24px 0; border-top: 1px solid var(--line); scroll-margin-top: 20px; }
+    .section-title { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+    .section-number { flex: 0 0 auto; width: 20px; color: #83947F; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .policy-section h2 { margin: 0; color: var(--ink); font-size: 18px; font-weight: 650; line-height: 1.4; letter-spacing: -.3px; }
+    .section-body { padding-left: 32px; }
+    .section-body p, .section-body li { margin: 0; font-size: 14px; line-height: 1.8; }
+    .section-body p + p { margin-top: 12px; }
+    .section-body ul { margin: 12px 0 0; padding-left: 18px; }
+    .section-body li + li { margin-top: 8px; }
+    .section-body li::marker { color: #91A48F; }
+    .detail-label { color: var(--ink); font-weight: 600; }
+    .contact { display: block; margin-top: 15px; border-radius: 13px; background: var(--surface); border: 1px solid var(--line); padding: 16px; }
+    .contact-name { margin-bottom: 5px !important; color: var(--ink); font-weight: 600; }
+    .contact-email { color: #2A6552; overflow-wrap: anywhere; -webkit-user-select: text; user-select: text; }
+    .contact-note { margin-top: 6px !important; color: var(--muted); font-size: 11px !important; line-height: 1.65 !important; }
+    .end-note { display: flex; align-items: center; gap: 8px; padding: 6px 0 5px 32px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .end-note svg { width: 14px; height: 14px; flex: 0 0 auto; color: #658264; }
+
+    .policy-footer {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 auto;
+      padding: 13px calc(20px + var(--privacy-safe-right)) calc(12px + var(--privacy-safe-bottom)) calc(20px + var(--privacy-safe-left));
+      border-top: 1px solid var(--line);
+      background: #FFFFFF;
+    }
+    .footer-inner { width: 100%; max-width: 692px; margin: 0 auto; }
+    .continue-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      min-height: 50px;
+      margin: 0;
+      border: 0;
+      border-radius: 13px;
+      padding: 12px 18px;
+      background: var(--ink);
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.5;
+      cursor: pointer;
+      touch-action: manipulation;
+      transition: background-color .15s ease, transform .15s ease;
+    }
+    .continue-button:hover { background: #205345; }
+    .continue-button:active { background: #0E3028; transform: scale(.99); }
+    .continue-button:focus-visible { outline: 3px solid #8BAF9B; outline-offset: 3px; }
+    .continue-button:disabled { background: #486B5D; cursor: default; transform: none; }
+    .continue-button svg { width: 17px; height: 17px; flex: 0 0 auto; }
+    .footer-caption { margin: 8px 0 0; text-align: center; color: var(--muted); font-size: 10px; line-height: 1.5; }
+    .bridge-feedback { display: none; margin: 8px 0 0; text-align: center; color: #705A32; font-size: 11px; line-height: 1.5; }
+    .bridge-feedback.visible { display: block; }
+
+    @media (max-width: 340px) {
+      .scroll-inner { padding-right: 18px; padding-left: 18px; }
+      .masthead { gap: 8px; }
+      .brand-name { font-size: 9px; letter-spacing: 1px; }
+      .sample-tag { font-size: 9px; padding: 5px 7px; }
+      .hero { padding-top: 22px; }
+      h1 { font-size: 29px; }
+      .section-title { gap: 9px; }
+      .section-body { padding-left: 29px; }
+      .policy-footer { padding-right: calc(16px + var(--privacy-safe-right)); padding-left: calc(16px + var(--privacy-safe-left)); }
+    }
+    @media (min-width: 700px) {
+      .scroll-inner { padding-right: 38px; padding-left: 38px; padding-bottom: 40px; }
+      .masthead { padding-top: calc(35px + var(--privacy-safe-top)); }
+      .hero { padding-top: 38px; padding-bottom: 27px; }
+      .lead { font-size: 16px; }
+      .at-a-glance { padding: 21px 23px; }
+      .summary-item { font-size: 13px; }
+      .policy-section { padding-top: 28px; padding-bottom: 28px; }
+      .section-body p, .section-body li { font-size: 15px; }
+      .policy-footer { padding-top: 16px; padding-bottom: calc(15px + var(--privacy-safe-bottom)); }
+    }
+    @media (max-height: 500px) {
+      .masthead { padding-top: calc(16px + var(--privacy-safe-top)); }
+      .hero { padding-top: 19px; padding-bottom: 18px; }
+      .policy-footer { padding-top: 10px; padding-bottom: calc(9px + var(--privacy-safe-bottom)); }
+      .continue-button { min-height: 46px; padding-top: 10px; padding-bottom: 10px; }
+      .footer-caption { margin-top: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .policy-scroll { scroll-behavior: auto; }
+      .continue-button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="policy-shell">
+    <main id="policyContent" class="policy-scroll" aria-label="Privacy policy content" tabindex="0">
+      <div class="scroll-inner">
+        <div class="masthead">
+          <div class="brand">
+            <svg class="brand-mark" viewBox="0 0 28 30" fill="none" aria-hidden="true">
+              <path d="M14 2.2 24 6v8.2c0 6-4.5 10.4-10 13.4C8.5 24.6 4 20.2 4 14.2V6L14 2.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="m9.7 14.3 2.9 2.9 5.8-6.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="brand-name">WEIGHT<br>LAB</span>
+          </div>
+          <span class="sample-tag">Local-first</span>
+        </div>
+
+        <header class="hero">
+          <p class="eyebrow">Privacy policy</p>
+          <h1>Privacy, in<br>plain language.</h1>
+          <p class="lead">How Weight Lab handles your studies, files and choices — clearly explained.</p>
+          <div class="meta">
+            <span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="11" height="10" rx="2" stroke="currentColor"/><path d="M5 2v3M11 2v3M3 7h10" stroke="currentColor" stroke-linecap="round"/></svg>Updated 12 Nov 2026</span>
+            <span>Applies to Weight Lab</span>
+          </div>
+        </header>
+
+        <p class="notice"><strong>Your analysis, on your device.</strong> Weight Lab is a local analysis tool. This policy explains local storage, files you choose to share, and the limited connections involved in online notices or support.</p>
+
+        <aside class="at-a-glance" aria-labelledby="glanceTitle">
+          <h2 id="glanceTitle">At a glance</h2>
+          <div class="summary-item">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m4 9 3.1 3.1L14 5.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>No accounts, advertising, analytics or built-in cloud synchronization.</p>
+          </div>
+          <div class="summary-item">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 2.8h6l3 3v9.4H5V2.8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 2.8v3h3M7 9h5M7 12h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <p>Your workspace is processed locally. You choose when to export or share it.</p>
+          </div>
+          <div class="summary-item">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2.6 6.6a10.4 10.4 0 0 1 12.8 0M5 9.2a6.5 6.5 0 0 1 8 0M7.4 11.8a2.7 2.7 0 0 1 3.2 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="9" cy="14.2" r=".8" fill="currentColor"/></svg>
+            <p>You can continue at any time. Reading this notice does not grant a permission.</p>
+          </div>
+        </aside>
+
+        <section class="policy-section" aria-labelledby="section01">
+          <div class="section-title"><span class="section-number">01</span><h2 id="section01">Information you use in Weight Lab</h2></div>
+          <div class="section-body">
+            <p>Weight Lab helps you compare candidate sites and alternatives using criteria, weights, judgments and analysis results. Information you enter or import can include project names, source attributes, candidate coordinates, notes, observations and evidence files.</p>
+            <p>These workspace contents are processed and stored on your device. Weight Lab does not automatically upload them to us. The app does not require an account and does not include advertising, analytics or automatic cloud synchronization.</p>
+            <p>Coordinates contained in an imported file are part of the data you choose to use; they do not mean that the app is tracking your device’s location.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section02">
+          <div class="section-title"><span class="section-number">02</span><h2 id="section02">Local storage and how it is used</h2></div>
+          <div class="section-body">
+            <p>Your workspace and preferences are saved locally so you can reopen studies, run comparisons, review results and keep your chosen settings between sessions.</p>
+            <p>The privacy viewer can also save the address and appearance settings of an online notice, allowing it to retry the last available notice if a later configuration request fails. This saved address is not a copy of your workspace and is not a complete offline website.</p>
+            <p>Local processing components support calculations, geometry and coordinate operations, database storage and file packaging. They are not advertising or analytics services.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section03">
+          <div class="section-title"><span class="section-number">03</span><h2 id="section03">Files, exports and backups</h2></div>
+          <div class="section-body">
+            <p>You choose the files you import and the reports, study packages or backups you export. Exported files can contain project names, coordinates, attributes, judgments, notes and analysis results. Some export options can also include original sources or evidence attachments.</p>
+            <p>When you use the system file picker or share sheet, the destination you select — such as a storage provider, another app or another person — may receive the selected files. Review the contents and destination before sharing. Weight Lab cannot retrieve or delete copies already sent elsewhere.</p>
+            <p>The app’s workspace is excluded from automatic system cloud backup. Use Weight Lab’s backup controls when you want to preserve a copy, and keep that copy in a location you trust. Choosing a cloud folder for an export or backup is your own file-sharing action, not automatic synchronization by Weight Lab.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section04">
+          <div class="section-title"><span class="section-number">04</span><h2 id="section04">Online notices and external services</h2></div>
+          <div class="section-body">
+            <p>The core analysis tools work locally. Online privacy delivery can nevertheless make requests to check connectivity, retrieve notice settings or display an online policy. These requests can reach Apple connectivity or lookup services, a configuration service and the site hosting the notice.</p>
+            <p>The receiving services can receive ordinary connection information, such as your IP address, request time and standard browser or network headers. The privacy-delivery requests do not include your study contents. Hosting services may maintain operational logs under their own policies.</p>
+            <p>If you open an external reference or another website, that service handles the resulting connection under its own privacy policy. Embedded web content may also use cookies or local website storage; Weight Lab’s privacy viewer does not clear all such site data on every visit. This does not add advertising or analytics to Weight Lab’s local analysis tools.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section05">
+          <div class="section-title"><span class="section-number">05</span><h2 id="section05">Retention, deletion and security</h2></div>
+          <div class="section-body">
+            <p>Workspace information remains in the app’s local storage until you delete it, replace it through restore or reset operations, or remove the app and its local data. You can manage studies and local data using the app’s controls. Removing local information does not remove backups, exports or attachments already saved outside the app.</p>
+            <p>Saved privacy-viewer settings remain until they are updated, cleared or removed with the app’s data. Because we do not receive your local workspace automatically, we cannot recover or remotely erase it for you.</p>
+            <p>Weight Lab uses the device’s app-storage protections. Protect your device and any exported backups, particularly when your files contain personal or confidential information. No storage or transmission method can provide an absolute security guarantee.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section06">
+          <div class="section-title"><span class="section-number">06</span><h2 id="section06">Your choices and contacting us</h2></div>
+          <div class="section-body">
+            <p>You decide what information to enter, which files to import and whether to export or share anything. The app’s local analysis does not depend on creating an account or accepting advertising or analytics tracking.</p>
+            <p><span class="detail-label">Continue to App means close this notice.</span> The button does not record consent to data collection, accept terms or grant a system permission. You do not have to scroll to the end to use it.</p>
+            <p>If you email us, we receive your email address, message and any attachments you choose to send. We use that information to respond to your question or request and retain it as needed for that purpose and applicable legal obligations. Please avoid sending confidential project files unless they are necessary for your request.</p>
+            <p>You may contact us about access, correction or deletion of information you have sent to us, or about other privacy rights that apply to you. Local workspace data can be managed directly in the app.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section07">
+          <div class="section-title"><span class="section-number">07</span><h2 id="section07">Changes to this policy</h2></div>
+          <div class="section-body">
+            <p>We may update this policy when Weight Lab’s features or information practices change. The date at the top identifies the current revision. An online copy may be updated separately from the copy included in an installed app.</p>
+            <p>We will explain material changes through an appropriate notice. Where a change requires your permission, we will request it separately; continuing past this reading screen is not a substitute for that permission.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="section08">
+          <div class="section-title"><span class="section-number">08</span><h2 id="section08">Contact Weight Lab</h2></div>
+          <div class="section-body">
+            <p>For privacy questions or requests concerning Weight Lab, contact us using the address below. You can select and copy the email address.</p>
+            <div class="contact">
+              <p class="contact-name">Weight Lab</p>
+              <p class="contact-email">WeightLab@hotmail.com</p>
+              <p class="contact-note">Please include “Weight Lab Privacy” in the subject so we can identify your request.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="end-note"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>That is the whole notice. The app is one tap away.</div>
+      </div>
+    </main>
+
+    <footer class="policy-footer" aria-label="Continue to the application">
+      <div class="footer-inner">
+        <button id="continueToApp" class="continue-button" type="button">
+          <span id="continueLabel">Continue to App</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="footer-caption">Close this notice. Keep your choices.</p>
+        <p id="bridgeFeedback" class="bridge-feedback" role="status" aria-live="polite"></p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var button = document.getElementById('continueToApp');
+      var label = document.getElementById('continueLabel');
+      var feedback = document.getElementById('bridgeFeedback');
+      var pending = false;
+      var resetTimer = null;
+
+      function showFeedback(message) {
+        feedback.textContent = message;
+        feedback.classList.add('visible');
+      }
+
+      function resetButton() {
+        pending = false;
+        button.disabled = false;
+        label.textContent = 'Continue to App';
+        if (resetTimer !== null) {
+          window.clearTimeout(resetTimer);
+          resetTimer = null;
+        }
+      }
+
+      button.addEventListener('click', function () {
+        if (pending) return;
+        var bridge = window.PrivacyBridge;
+        if (!bridge || typeof bridge.close !== 'function') {
+          showFeedback('Open this notice inside Weight Lab to continue.');
+          return;
+        }
+        feedback.textContent = '';
+        feedback.classList.remove('visible');
+        pending = true;
+        button.disabled = true;
+        label.textContent = 'Opening App…';
+        try {
+          bridge.close();
+          // A missing or rejected native response must not leave the button disabled.
+          resetTimer = window.setTimeout(function () {
+            resetButton();
+          }, 1500);
+        } catch (_) {
+          resetButton();
+          showFeedback('Please try again to continue to the app.');
+        }
+      });
+
+      window.addEventListener('pageshow', resetButton);
+      window.addEventListener('pagehide', function () {
+        if (resetTimer !== null) window.clearTimeout(resetTimer);
+      });
+    }());
+  </script>
+</body>
+</html>
+
